@@ -14,6 +14,9 @@
 #
 from kfp import dsl
 
+import mlrun
+
+project = mlrun.projects.pipeline_context.project
 
 @dsl.pipeline(name="test_pipeline", description="empty pipeline")
 def pipeline():
