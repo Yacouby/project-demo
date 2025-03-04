@@ -45,13 +45,8 @@ def setup(project: mlrun.projects.MlrunProject) -> mlrun.projects.MlrunProject:
         handler="prep_data",
     )
 
-    # project.set_function(
-    #     name="train",
-    #     func="functions/train.py",
-    #     kind="job",
-    #     handler="train_model",
-    # )
-
+    project.log_artifact("data", target_path="https://s3.wasabisys.com/iguazio/data/iris/iris.data.raw.csv")
+    
     # Save and return the project:
     project.save()
     return project
